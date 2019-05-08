@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <nav class="main-header__nav">
+      <ul class="main-header__item-list">
+          <li class="main-header__item">
+              <a class="<%= path === '/' ? 'active' : '' %>" href="/">EnterUserDetail</a>
+          </li>
+          <li class="main-header__item">
+            <a class="<%= path === '/email-send' ? 'active' : '' %>" href="/sendEmail">SendEmail</a>
+          </li>
+      </ul>
+  </nav>
+  <main>
+    <form class="detail-form"  action="/email-send" method="POST">
+      <div class="form-control">
+          <label for="toemail">To Email:</label>
+          <input type="email" name="toemail" id="toemail" >
+      </div>
+      <div class="form-control">
+          <label for="fromemail">From Email:</label>
+          <input type="email" name="fromemail" id="fromemail" >
+      </div>
+      <div class="form-control">
+          <label for="subject">Email Subject:</label>
+          <input type="text" name="subject" id="subject" >
+      </div>
+      <div class="form-control">
+          <label for="body">Email Body:</label>
+          <input type="text" name="body" id="body" >
+      </div>
+      <button class="btn" type="submit">Add User</button>
+    </form>
+  </main>
+  <script src="/js/main.js"></script>
+</body>
+</html>
+
